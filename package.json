@@ -1,8 +1,8 @@
 {
-  "name": "playbulb-live",
+  "name": "playbulb",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Set colours and run effects on Playbulb bluetooth candles.",
+  "main": "playbulb.js",
   "dependencies": {
     "noble": "^0.3.14"
   },
@@ -10,6 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Dr. Daniel Alexander Smith",
   "license": "ISC"
 }

@@ -5,9 +5,9 @@ function randInt(n) {
     return Math.floor(Math.random() * n);
 }
 
-var pb = new Playbulb();
+var pb = new Playbulb.PlaybulbColor();
 pb.ready(function () {
-    console.log("Playbulb Demo Mode");
+    console.log("Playbulb Color Demo Mode");
     var flashMax = 20;
     var doEffects = function (effectNum) {
         var r = randInt(256), g = randInt(256), b = randInt(256);
@@ -15,19 +15,19 @@ pb.ready(function () {
             default:
             case 0:
                 console.log("Running PULSE effect at max speed with red: " + r + ", green: " + g + ", blue: " + b);
-                pb.setPulse(r, g, b, 1.0);
+                pb.setPulse(0, r, g, b, 1.0);
                 break;
             case 1:
                 console.log("Running FLASH effect at max speed with red: " + r + ", green: " + g + ", blue: " + b);
-                pb.setFlash(r, g, b, 1.0);
+                pb.setFlash(0, r, g, b, 1.0);
                 break;
             case 2:
                 console.log("Running RAINBOW JUMP effect at max speed with red: " + r + ", green: " + g + ", blue: " + b);
-                pb.setRainbowJump(r, g, b, 1.0);
+                pb.setRainbowJump(0, r, g, b, 1.0);
                 break;
             case 3:
                 console.log("Running RAINBOW FADE effect at max speed with red: " + r + ", green: " + g + ", blue: " + b);
-                pb.setRainbowFade(r, g, b, 1.0);
+                pb.setRainbowFade(0, r, g, b, 1.0);
                 break;
             case 4:
                 setTimeout(function () { changeColours(flashMax); }, 2500);
@@ -41,7 +41,7 @@ pb.ready(function () {
         } else {
             var r = randInt(256), g = randInt(256), b = randInt(256);
             console.log("Setting colour to red: " + r + ", green: " + g + ", blue: " + b);
-            pb.setColor(r, g, b);
+            pb.setColor(0, r, g, b);
             setTimeout(function() { changeColours(flashCount - 1); }, 100);
         }
     };

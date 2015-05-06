@@ -1,8 +1,12 @@
 {
   "name": "playbulb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set colours and run effects on Playbulb bluetooth candles.",
   "main": "playbulb.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielsmith-eu/playbulb-live.git"
+  },
   "dependencies": {
     "noble": "^0.3.14"
   },

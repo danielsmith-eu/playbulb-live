@@ -1,0 +1,8 @@
+// copy this file to demo-twitter-config.js and put your keys below
+module.exports = {
+    consumer_key: '',
+    consumer_secret: '',
+    access_token_key: '',
+    access_token_secret: ''
+};
+

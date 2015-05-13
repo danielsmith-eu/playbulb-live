@@ -1,5 +1,7 @@
 # Playbulb-live
 
+[![NPM](https://nodei.co/npm/playbulb.png?downloads=true&stars=true)](https://nodei.co/npm/playbulb/)
+
 Node.js module for sending commands to the bluetooth Playbulb Candle and Playbulb Color.
 
 Uses `noble` for BLE communication, and protocol from `https://github.com/Phhere/Playbulb/blob/master/protocols/color.md`

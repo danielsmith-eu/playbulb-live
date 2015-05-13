@@ -1,6 +1,7 @@
 'use strict';
 var noble = require('noble');
 
+var SETCOLOR = -1;
 var types = {
     COLOR: {
         colorUuid: "0018",
@@ -69,7 +70,7 @@ var Playbulb = function (type, playbulbName, colorUuid, effectsUuid) {
             throw "saturation, r, g and b must be between 0 and 255";
 
         }
-        if (effect !== null) {
+        if (effect !== SETCOLOR) {
             if (speed < 0 || speed > 1) {
                 throw "speed must be between 0 and 1";
             }
@@ -98,6 +99,7 @@ var Playbulb = function (type, playbulbName, colorUuid, effectsUuid) {
             effectsChar.write(effectBytes);
         } else {
             var colorBytes = new Buffer([0, r, g, b]);
+            console.log(colorBytes);
             colorChar.write(colorBytes);
         }
     };
@@ -143,7 +145,7 @@ var PlaybulbColor = function (deviceName) {
     var pb = new Playbulb(type, deviceName);
     return {
         setColor: function (saturation, r, g, b) {
-            pb.runEffect(saturation, r, g, b);
+            pb.runEffect(saturation, r, g, b, SETCOLOR);
         },
         setPulse: function (saturation, r, g, b, speed) {
             pb.runEffect(saturation, r, g, b, types[type].modes.PULSE, speed);
@@ -169,7 +171,7 @@ var PlaybulbCandle = function (deviceName) {
 
     return {
         setColor: function (saturation, r, g, b) {
-            pb.runEffect(saturation, r, g, b);
+            pb.runEffect(saturation, r, g, b, SETCOLOR);
         },
         setFade: function (saturation, r, g, b, speed) {
             pb.runEffect(saturation, r, g, b, types[type].modes.FADE, speed);

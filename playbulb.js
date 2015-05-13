@@ -99,7 +99,6 @@ var Playbulb = function (type, playbulbName, colorUuid, effectsUuid) {
             effectsChar.write(effectBytes);
         } else {
             var colorBytes = new Buffer([0, r, g, b]);
-            console.log(colorBytes);
             colorChar.write(colorBytes);
         }
     };

@@ -1,6 +1,10 @@
 'use strict';
 var Playbulb = require('./playbulb');
 
+function rand256() {
+    return randInt(256);   
+}
+
 function randInt(n) {
     return Math.floor(Math.random() * n);
 }
@@ -10,7 +14,7 @@ pb.ready(function () {
     console.log("Playbulb Color Demo Mode");
     var flashMax = 20;
     var doEffects = function (effectNum) {
-        var r = randInt(256), g = randInt(256), b = randInt(256);
+        var r = rand256(), g = rand256(), b = rand256();
         switch (effectNum) {
             default:
             case 0:
@@ -39,7 +43,7 @@ pb.ready(function () {
         if (flashCount === 0) {
             doEffects(0);
         } else {
-            var r = randInt(256), g = randInt(256), b = randInt(256);
+            var r = rand256(), g = rand256(), b = rand256();
             console.log("Setting colour to red: " + r + ", green: " + g + ", blue: " + b);
             pb.setColor(0, r, g, b);
             setTimeout(function() { changeColours(flashCount - 1); }, 100);
